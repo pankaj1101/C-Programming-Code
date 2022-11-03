@@ -1,0 +1,247 @@
+--Taking double input
+#include<stdio.h>
+
+int main(){
+  double d;
+  printf("Enter Number : ");
+  scanf("%lf",&d);
+  printf("%lf",d);
+}
+
+
+
+
+-- Compare 2 String..
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char str1[] = "abcd", str2[] = "abCd", str3[] = "abcd";
+  int result;
+
+  // comparing strings str1 and str2
+  result = strcmp(str1, str2);
+  printf("strcmp(str1, str2) = %d\n", result);
+
+  // comparing strings str1 and str3
+  result = strcmp(str1, str3);
+  printf("strcmp(str1, str3) = %d\n", result);
+
+  return 0;
+}
+
+
+
+
+--Find Size of Array and String..
+#include <stdio.h>
+int main()
+{
+
+  //Note every string terminates with a NULL character (“\0”)
+  char str[]="Pankaj"; 
+  //sizeof(str) -> this will give String_Size = 7
+  printf("Size of String :%d",sizeof(str)-1);
+
+  int n[]={1,2,3,4,5,6}; 
+  printf("Size of integer Array :%d",sizeof(n)/4); 
+
+  //integer Array..
+  int num[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+  int i;
+  for (i = 0; i < num[i] != '\0'; i++);
+  printf("Size of Array : %d", i);
+
+  char a[10] = "Golu";
+
+  int s;
+  for (s = 0; s < a[s] != '\0'; s++);
+  printf("\nSize of String : %d", s);
+
+}
+
+
+
+
+--Find size of string ..
+#include <stdio.h>
+int main()
+{
+  char name[10];
+  
+  printf("Enter String : ");
+  scanf("%s", name);
+
+  int i = 0;
+  for (i = 0; name[i] != '\0'; i++);
+  printf("Size of String : %d", i);
+
+}
+
+
+
+--Swape number using 2 Variable ..
+#include <stdio.h>
+int main()
+{
+  int x = 12;
+  int y = 30;
+
+  printf("Before");
+  printf("\nFirst Number : %d", x);
+  printf("\nSecond Number : %d", y);
+
+  x= x+ y;
+  y= x- y;
+  x= x- y;
+
+  printf("\nAfter");
+  printf("\nFirst Number : %d", x);
+  printf("\nSecond Number : %d", y);
+}
+
+
+--Swape number using pointer and 2 Variable ..
+
+#include <stdio.h>
+int main()
+{
+
+  int x = 13, *ptr1 = &x;
+  int y = 30, *ptr2 = &y;
+
+  printf("Before");
+  printf("\nFirst Number : %d", *ptr1);
+  printf("\nSecond Number : %d", *ptr2);
+
+  *ptr1 = *ptr1 + *ptr2;
+  *ptr2 = *ptr1 - *ptr2;
+  *ptr1 = *ptr1 - *ptr2;
+
+  printf("\nAfter");
+  printf("\nFirst Number : %d", *ptr1);
+  printf("\nSecond Number : %d", *ptr2);
+
+}
+
+
+--gets() and puts() method to take input and display string
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+  char name[10];
+
+  printf("Enter name : ");
+  gets(name); //To Take Input
+
+  printf("\nYour Name is : ");
+  puts(name);  //To display
+
+}
+
+
+
+
+--struct program
+#include <stdio.h>
+
+struct Student
+{
+  int sid;
+  char name[50];
+  int mobile;
+  int age;
+};
+
+int main()
+{
+
+  int N;
+  printf("Enter number of Student : ");
+  scanf("%d", &N);
+  struct Student student[N];
+
+  for (int i = 0; i < N; i++)
+  {
+
+    printf("Enter sid : ");
+    scanf("%d", &student[i].sid);
+
+    printf("Enter name : ");
+    scanf("%s", student[i].name);
+
+    printf("Enter mobile : ");
+    scanf("%d", &student[i].mobile);
+
+    printf("Enter Age : ");
+    scanf("%d", &student[i].age);
+    printf("\n");
+  }
+
+  printf("\n**Student Details**\n");
+  for (int i = 0; i < N; i++)
+  {
+
+    printf("\nsid : %d", student[i].sid);
+    printf("\nName :%s ", student[i].name);
+    printf("\nMobile :%d ", student[i].mobile);
+    printf("\nAge : %d", student[i].age);
+    printf("\n");
+  }
+}
+
+
+--Define struct...
+
+struct Student
+{
+  int sid;
+  char name[50];
+  int mobile;
+  int age;
+}student[2];
+
+
+
+--Lcm of 2 number
+#include <stdio.h>
+int main()
+{
+    int num1, num2;
+    printf("Enter 1st Number : ");
+    scanf("%d", &num1);
+    printf("Enter 2nd Number : ");
+    scanf("%d", &num2);
+    int temp = 0;
+
+    if (num1 > num2)
+    {
+        temp = num1;
+        for (int j = 2;; j++)
+        {
+            if (temp % num2 == 0)
+            {
+                printf("LCM of %d and %d is : %d", num1, num2, temp);
+                break;
+            }
+            temp = num1 * j;
+        }
+    }
+    else
+    {
+        temp = num2;
+        for (int j = 2;; j++)
+        {
+            if (temp % num1 == 0)
+            {
+                printf("LCM of %d and %d is : %d", num1, num2, temp);
+                break;
+            }
+            temp = num2 * j;
+        }
+    }
+    return 0;
+}
